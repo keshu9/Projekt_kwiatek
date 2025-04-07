@@ -1,8 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog podróżniczy</title>
   <link rel="stylesheet" href="style.css"/>
 
@@ -12,6 +16,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=location_on" />
 </head>
+
 <body>
   <div class="container">
 
@@ -50,4 +55,5 @@
     </footer>
   </div>
 </body>
+
 </html>
