@@ -118,14 +118,14 @@ if (!isset($_SESSION['logged_in'])) {
 
       </div>
 
-      <footer class="footer">
-        <div class="footer-column">
-          <span class="material-symbols-outlined">
-            location_on
-          </span>
-          <a class="icons">ADRES</a>
-          <p>UL. BUDOWLANA 15<br>05-300 Mińsk Mazowiecki</p>
-        </div>
+  <footer class="footer">
+    <div class="footer-column">
+      <span class="material-symbols-outlined">
+        location_on
+      </span>
+      <a class="icons">ADRES</a>
+      <p>UL. BUDOWLANA 4<br>05-300 Mińsk Mazowiecki</p>
+    </div>
 
         <div class="footer-column">
           <span class="material-symbols-outlined">
