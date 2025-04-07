@@ -25,36 +25,28 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        const map = L.map('map').setView([39.5, -98.35], 4); // środek USA
+        const map = L.map('map', {
+            dragging: false,
+            touchZoom: false,
+            scrollWheelZoom: false,
+            doubleClickZoom: false,
+            boxZoom: false,
+            keyboard: false,
+            zoomControl: false, // ukrywa przyciski +/-
+            tap: false
+        }).setView([39.5, -98.35], 4);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
-
-        // Lista zabytków (można dynamicznie z bazy lub pliku JSON)
-        const zabytki = [
-            {
-                nazwa: "Statua Wolności",
-                wspolrzedne: [40.6892, -74.0445],
-                link: "zabytek1.html"
-            },
-            {
-                nazwa: "Mount Rushmore",
-                wspolrzedne: [43.8791, -103.4591],
-                link: "zabytek2.html"
-            },
-            {
-                nazwa: "Lincoln Memorial",
-                wspolrzedne: [38.8893, -77.0502],
-                link: "zabytek3.html"
-            }
-        ];
-
-        // Dodawanie pinezek
-        zabytki.forEach(zabytek => {
-            const marker = L.marker(zabytek.wspolrzedne).addTo(map);
-            marker.bindPopup(`<b>${zabytek.nazwa}</b><br><a href="${zabytek.link}">Zobacz więcej</a>`);
-        });
+        fetch('zabytki_api.php').then(res => res.json()).then(data => {
+            console.log(data)
+            data.forEach(zabytek => {
+                const [lat, lng] = zabytek.koordynaty.split(',').map(Number);
+                const marker = L.marker([lat, lng]).addTo(map);
+                marker.bindPopup(`<b>${zabytek.nazwa_miejsca}</b><br><a href="${zabytek.zdjecie_miejsca}">Zobacz więcej</a>`);
+            });
+        })
     </script>
 
 </body>
