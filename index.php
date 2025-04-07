@@ -33,6 +33,22 @@ session_start();
       <div>
         <h1 class="flaga-text">Blog o USA</h1>
 
+          <div class="space">
+
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+
+          </div>
+          
         <div class="container-option">
           <div class="option">
             <p><a href="rejestracja.php">Rejestracja</a></p>

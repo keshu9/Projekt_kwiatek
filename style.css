@@ -37,6 +37,12 @@ body {
   padding-bottom: 5px;
 }
 
+.space {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .option {
   padding: 15px;
   text-align: center;
@@ -45,7 +51,7 @@ body {
 .option:hover {
   padding: 15px;
   text-align: center;
-  background-color: #044f9e;
+  background-color: #032f5e;
   transition: background-color 0.5s;
 }
 
@@ -86,7 +92,7 @@ main {
 .footer {
   display: flex;
   justify-content: space-between;
-  background-color: #2f72b9;
+  background-color: #032f5e;
   border-top: 2px solid #001f41;
   color: white;
   padding: 20px 60px;
