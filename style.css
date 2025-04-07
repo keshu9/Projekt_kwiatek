@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #001f41;
+    color: white;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #02254f;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .sidebar h1 {
+    font-size: 2rem;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+  }
+  
+  .sidebar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .map {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .map img {
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .city-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+  }
+  
+  .place {
+    display: flex;
+    background-color: #3a6c8e;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+  }
+  
+  .place img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+  }
+  
+  .desc {
+    flex: 1;
+  }
+  
+  .favorite {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 0 10px;
+    transition: transform 0.2s;
+  }
+  
+  .favorite:hover {
+    transform: scale(1.2);
+  }
+  
+  .favorite.selected {
+    color: yellow;
+  }
+  

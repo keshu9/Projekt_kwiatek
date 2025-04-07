@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+}
+  
+body, html {
+    height: 100%;
+}
+  
+.container {
+    display: flex;
+    height: 100vh;
+}
+  
+.left-panel {
+    background-color: #001f41;
+    width: 40%;
+}
+  
+.right-panel {
+    width: 60%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #001f41;
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.form {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #001f41;
+}
+  
+input {
+    border: none;
+    border-bottom: 2px dashed #001f41;
+    padding: 5px;
+    font-size: 1rem;
+    outline: none;
+    background-color: transparent;
+}
+  
+button {
+    margin-top: 20px;
+    background-color: #001f41;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+button:hover {
+    background-color: #003366;
+}
+  
+.login-link {
+    text-align: center;
+    font-size: 0.8rem;
+}
+  
+.login-link a {
+    font-weight: bold;
+    color: #001f41;
+    text-decoration: none;
+}
+  
