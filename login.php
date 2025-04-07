@@ -1,5 +1,5 @@
-<?php
- $conn = new mysqli("localhost", "root", "", "zwiedzanie");
+<?php include 'database.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -36,25 +36,26 @@
       <?php
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
-        $password = $_POST['password'];  
-        
+        $password = $_POST['password'];
+
 
         $sql = "SELECT * FROM users WHERE email = '$email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-          while($row = $result->fetch_assoc()) {
+          while ($row = $result->fetch_assoc()) {
             if ($row['password'] == $password) {
-              echo "Zalogowano pomyślnie!";
-              } else {
-                echo "Błędne hasło!";
-                }
-                }
-                } else {
-                  echo "Nie znaleziono użytkownika!";
+              $_SESSION['email'] = $email;
+              $_SESSION['logged_in'] = 'yes';
+              header("Location: index.php");
+            } else {
+              echo "Błędne hasło!";
+            }
           }
-                
+        } else {
+          echo "Nie znaleziono użytkownika!";
+        }
       }
-    ?>
+      ?>
     </div>
   </div>
 </body>
