@@ -1,11 +1,17 @@
+<?php
+session_start();
+echo $_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog podróżniczy</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="container">
     <!-- Lewy panel (menu) -->
@@ -54,4 +60,5 @@
     </main>
   </div>
 </body>
+
 </html>
