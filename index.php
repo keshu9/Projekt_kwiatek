@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['logged_in'])) {
+  $_SESSION['logged_in'] = 'no';
+};
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -32,6 +35,9 @@ session_start();
     <div class="side-bar">
       <div>
         <h1 class="flaga-text">Blog o USA</h1>
+        <?php
+        if ($_SESSION['logged_in'] != 'yes') {
+          echo '<div class="container-option">
 
           <div class="space">
 
@@ -58,49 +64,59 @@ session_start();
             <p><a href="login.php">Logowanie</a></p>
           </div>
         </div>
-      </div>
-
-      <div class="profile">
+        </div>
+        </div>
+      </div>';
+        } else {
+          echo '<div class="container-option">
+          <div class="option">
+            <p><a href="ulubione.php">Ulubione</a></p>
+          </div>
+          </div>
+          <div class="profile">
         <span class="material-symbols-outlined" id="profile-icon">account_circle </span>
-        <a href="">Zaloguj się</a>
+        <a href="">' . $_SESSION['email'] . '</a>
       </div>
-    </div>
-
-    <main>
-      <div class="mapa">
-
-        <div id="map"></div>
-
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-        <script>
-          const map = L.map('map', {
-            dragging: false,
-            touchZoom: false,
-            scrollWheelZoom: false,
-            doubleClickZoom: false,
-            boxZoom: false,
-            keyboard: false,
-            zoomControl: false,
-            tap: false
-          }).setView([39.5, -98.35], 4);
-
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-          }).addTo(map);
-          fetch('zabytki_api.php').then(res => res.json()).then(data => {
-            console.log(data)
-            data.forEach(zabytek => {
-              const [lat, lng] = zabytek.koordynaty.split(',').map(Number);
-              const marker = L.marker([lat, lng]).addTo(map);
-              marker.bindPopup(`<b>${zabytek.nazwa_miejsca}</b><br><a href="${zabytek.zdjecie_miejsca}">Zobacz więcej</a>`);
-            });
-            map.invalidateSize();
-          })
-        </script>
       </div>
-    </main>
+    </div>';
+        };
+        ?>
 
-  </div>
+        <main>
+          <div class="mapa">
+
+            <div id="map"></div>
+
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+              const map = L.map('map', {
+                dragging: false,
+                touchZoom: false,
+                scrollWheelZoom: false,
+                doubleClickZoom: false,
+                boxZoom: false,
+                keyboard: false,
+                zoomControl: false,
+                tap: false
+              }).setView([39.5, -98.35], 4);
+
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+              }).addTo(map);
+              fetch('zabytki_api.php').then(res => res.json()).then(data => {
+                console.log(data)
+                data.forEach(zabytek => {
+                  const [lat, lng] = zabytek.koordynaty.split(',').map(Number);
+                  const marker = L.marker([lat, lng]).addTo(map);
+                  marker.bindPopup(`<b>${zabytek.nazwa_miejsca}</b><br><a href="${zabytek.zdjecie_miejsca}">Zobacz więcej</a>`);
+                });
+                map.invalidateSize();
+              })
+            </script>
+          </div>
+        </main>
+
+      </div>
 
   <footer class="footer">
     <div class="footer-column">
@@ -108,25 +124,25 @@ session_start();
         location_on
       </span>
       <a class="icons">ADRES</a>
-      <p>UL. BUDOWLANA 4<br>05-300 Mińsk Mazowiecki</p>
+      <p>UL. BUDOWLANA 15<br>05-300 Mińsk Mazowiecki</p>
     </div>
 
-    <div class="footer-column">
-      <span class="material-symbols-outlined">
-        call
-      </span>
-      <a class="icons">KONTAKT</a>
-      <p>support@usablog.pl<br>+48 111 222 333</p>
-    </div>
+        <div class="footer-column">
+          <span class="material-symbols-outlined">
+            call
+          </span>
+          <a class="icons">KONTAKT</a>
+          <p>support@usablog.pl<br>+48 111 222 333</p>
+        </div>
 
-    <div class="footer-column">
-      <span class="material-symbols-outlined">
-        location_on
-      </span>
-      <a class="icons">NASZA STRONA</a>
-      <p>O NAS<br>OPINIE</p>
-    </div>
-  </footer>
+        <div class="footer-column">
+          <span class="material-symbols-outlined">
+            location_on
+          </span>
+          <a class="icons">NASZA STRONA</a>
+          <p>O NAS<br>OPINIE</p>
+        </div>
+      </footer>
 </body>
 
 </html>

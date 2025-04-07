@@ -1,5 +1,5 @@
 <?php
-session_start();
+ $conn = new mysqli("localhost", "root", "", "zwiedzanie");
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -27,7 +27,7 @@ session_start();
         <input type="text" name='email' required>
 
         <label>Hasło:</label>
-        <input type="password" required>
+        <input type="password" name="password" required>
 
         <button type="submit">Zaloguj się</button>
 
@@ -35,11 +35,26 @@ session_start();
       </form>
       <?php
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['logged_in'] = 'yes';
-        header("Location: index.php");
+        $email = $_POST['email'];
+        $password = $_POST['password'];  
+        
+
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            if ($row['password'] == $password) {
+              echo "Zalogowano pomyślnie!";
+              } else {
+                echo "Błędne hasło!";
+                }
+                }
+                } else {
+                  echo "Nie znaleziono użytkownika!";
+          }
+                
       }
-      ?>
+    ?>
     </div>
   </div>
 </body>
