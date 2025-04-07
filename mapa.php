@@ -7,13 +7,8 @@
     <style>
         #map {
             height: 600px;
-            width: 100%;
+            width: 80%;
             margin: 0 auto;
-        }
-
-        body {
-            font-family: sans-serif;
-            text-align: center;
         }
     </style>
 </head>
