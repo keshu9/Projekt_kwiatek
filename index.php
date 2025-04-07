@@ -10,25 +10,51 @@ session_start();
   <title>Blog podróżniczy</title>
   <link rel="stylesheet" href="style.css"/>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=mail" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=call" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=location_on" />
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+
 </head>
-
 <body>
   <div class="container">
 
     <div class="side-bar">
-      <h1>blog</h1>
+      <div>
+        <h1 class="flaga-text">Blog o USA</h1>
+
+        <div class="container-option">
+          <div class="option">
+            <p><a href="">Rejestracja</a></p>
+          </div>
+
+          <div class="option">
+            <p><a href="">Logowanie</a></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="profile">
+        <span class="material-symbols-outlined" id="profile-icon">account_circle </span>
+        <a href="">Zaloguj się</a>
+      </div>
     </div>
 
     <main>
       <h1>mapa</h1>
     </main>
     
-    <footer class="footer">
+  </div>
+
+  <footer class="footer">
       <div class="footer-column">
         <span class="material-symbols-outlined">
           location_on
@@ -53,7 +79,6 @@ session_start();
         <p>O NAS<br>OPINIE</p>
       </div>
     </footer>
-  </div>
 </body>
 
 </html>

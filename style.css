@@ -5,49 +5,106 @@
     font-family: Arial, sans-serif;
   }
   
-  body {
+body {
     background-color: #001f41;
     color: white;
-  }
+}
   
   
-  .container {
+.container {
     display: flex;
     height: 100vh;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-start;
-  }
+}
 
-  .side-bar {
-    left: auto;
-    width: 20%;
-    height: 80%;
-    background-color: aqua;
-  }
+.side-bar {
+  width: 20%;
+  height: 100%;
+  background-color: #001f41;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
- main {
-  left: auto;
+.flaga-text {
+    font-size: 90px;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.option {
+  padding: 15px;
+  text-align: center;
+}
+
+.option:hover {
+  padding: 15px;
+  text-align: center;
+  background-color: #044f9e;
+  transition: background-color 0.5s;
+}
+
+.option a {
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.profile a {
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 26px;
+}
+
+#profile-icon {
+  font-size: 40px;
+  padding: 10px;
+}
+
+main {
   width: 80%;
-  height: 80%;
- }
+  height: 100%;
+  background-color: white;
+}
 
-  .footer {
+.footer {
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: #2f72b9;
     border-top: 2px solid #001f41;
-    color: #001f41;
+    color: white;
     padding: 20px 60px;
-    font-family: Arial, sans-serif;
+    font-family: "Oswald", sans-serif;
     height: 20%;
     
-  }
+}
   
   .footer-column {
     text-align: left;
     align-items: left;
   }
+
+.icons {
+  font-size: 26px;
+  font-weight: 300;
+  font-family: "Oswald", sans-serif;
+}
   
   .footer-column:nth-child(2) {
     text-align: left;
