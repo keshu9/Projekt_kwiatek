@@ -38,6 +38,24 @@ if (!isset($_SESSION['logged_in'])) {
         <?php
         if ($_SESSION['logged_in'] != 'yes') {
           echo '<div class="container-option">
+
+          <div class="space">
+
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+          <span class="material-symbols-outlined">star </span>
+
+          </div>
+          
+        <div class="container-option">
           <div class="option">
             <p><a href="rejestracja.php">Rejestracja</a></p>
           </div>
