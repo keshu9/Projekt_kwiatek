@@ -1,0 +1,81 @@
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa zabytków USA</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mapa zabytków w USA</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([39.5, -98.35], 4); // środek USA
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Lista zabytków (można dynamicznie z bazy lub pliku JSON)
+        const zabytki = [
+            {
+                nazwa: "Statua Wolności",
+                wspolrzedne: [40.6892, -74.0445],
+                link: "zabytek1.html"
+            },
+            {
+                nazwa: "Mount Rushmore",
+                wspolrzedne: [43.8791, -103.4591],
+                link: "zabytek2.html"
+            },
+            {
+                nazwa: "Lincoln Memorial",
+                wspolrzedne: [38.8893, -77.0502],
+                link: "zabytek3.html"
+            }
+        ];
+
+        // Dodawanie pinezek
+        zabytki.forEach(zabytek => {
+            const marker = L.marker(zabytek.wspolrzedne).addTo(map);
+            marker.bindPopup(`<b>${zabytek.nazwa}</b><br><a href="${zabytek.link}">Zobacz więcej</a>`);
+        });
+    </script>
+
+</body>
+
+</html>
+📄 Przykładowa podstrona: zabytek1.html
+html
+Kopiuj
+Edytuj
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Statua Wolności</title>
+</head>
+
+<body>
+    <h1>Statua Wolności</h1>
+    <p>To jeden z najbardziej rozpoznawalnych zabytków w USA, zlokalizowany w Nowym Jorku.</p>
+    <a href="mapa.html">← Powrót do mapy</a>
+</body>
+
+</html>

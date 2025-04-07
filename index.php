@@ -49,7 +49,16 @@ session_start();
     </div>
 
     <main>
-      <h1>mapa</h1>
+    <div class="mapa">
+    <!-- Wersja uproszczona SVG mapy USA - tylko kilka stanów jako przykład -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959 593" width="100%">
+      <!-- Przykladowe stany -->
+      <path id="TX" d="M447.9,423.3L448,426.7L445,428.5L444.6,423.4Z" />
+      <path id="CA" d="M160.7,389.9L162.1,392.5L164.2,390.3L162.9,386.9Z" />
+      <path id="FL" d="M748.3,489.4L750.6,491.7L752.1,489.1L749.4,486.8Z" />
+      <!-- Dodaj więcej stanów według potrzeb -->
+    </svg>
+  </div>
     </main>
     
   </div>
