@@ -65,6 +65,7 @@ if (!isset($_SESSION['logged_in'])) {
           </div>
         </div>
         </div>
+        </div>
       </div>';
         } else {
           echo '<div class="container-option">
